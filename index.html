@@ -49,6 +49,14 @@
             position: fixed;
             top: 20px; /* Adjust top position as needed */
             right: 20px; /* Adjust right position as needed */
+            z-index: 999; /* Ensure button is on top of other content */
+            background: none; /* Remove background color */
+            border: none; /* Remove border */
+        }
+
+        .gallery-button img {
+            width: 64px; /* Set width to 64 pixels */
+            height: 64px; /* Set height to 64 pixels */
         }
 
         
@@ -94,7 +102,7 @@
     <header>
         <h1>Hey, I'm Deathshot</h1>
         <button class="gallery-button" onclick="goToGallery()">
-        <img src="https://cdn.discordapp.com/attachments/1127651827337396378/1243914545102061619/z3CfN3g.png?ex=66533532&is=6651e3b2&hm=ac130236729b6c81d6c78688bce61485cb735aaacd33be705e254a609ca0f087&" alt="Gallery Icon" width="64" height="64">
+        <img src="https://cdn.discordapp.com/attachments/1127651827337396378/1243914545102061619/z3CfN3g.png?ex=66533532&is=6651e3b2&hm=ac130236729b6c81d6c78688bce61485cb735aaacd33be705e254a609ca0f087&" alt="Gallery Icon">
     </button>
     </header>
 
