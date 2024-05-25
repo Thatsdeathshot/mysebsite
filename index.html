@@ -44,6 +44,13 @@
         #slideshowImage {
             transition: opacity 0.5s ease; /* Add transition effect to the image */
         }
+        /* Style for the button */
+        .gallery-button {
+            position: fixed;
+            top: 20px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
+            z-index: 999; /* Ensure button is on top of other content */
+        }
 
         
     </style>
@@ -76,6 +83,12 @@
 
         // Start the slideshow when the page loads
         window.onload = startSlideshow;
+
+        function goToGallery() {
+            // Redirect to the gallery page
+            window.location.href = "gallery.html"; // Replace gallery.html with the actual URL of your gallery page
+        }
+        
     </script>
 </head>
 <body>
@@ -99,6 +112,11 @@
             <p> Note: These renders are just place holder for now (not final renders)
             <img id="slideshowImage" src="" alt="Slideshow Image" style="display: block; margin: 0 auto; max-width: 100%;" /> <!-- Image tag for slideshow -->
         </section>
+        <!-- Button to go to the gallery page -->
+    <button class="gallery-button" onclick="goToGallery()">
+        <img src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-vector-gallery-icon-png-image_3781980.jpg" alt="Gallery Icon" width="64" height="64">
+    </button>
+        
     </main>
 
     <footer>
