@@ -1,0 +1,81 @@
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(135deg, #03002f, #000000); /* Gradient background color */
+            color: #fff; /* Light text color */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center; /* Center align the header */
+            color: orange; /* Orange color for header */
+            margin-top: 20px; /* Add space above the header */
+        }
+		h2 {
+            color: #f39c12; /* Custom color for h2 */
+        }
+        main {
+            flex: 1;
+            padding: 20px; /* Add padding inside main */
+        }
+        footer {
+            background-color: #222; /* Dark footer background */
+            color: #bbb; /* Light text color for footer */
+            text-align: center;
+            padding: 10px;
+        }
+        section {
+            margin-bottom: 20px; /* Add space between sections */
+        }
+		.gallery-button {
+            position: fixed;
+            top: 20px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
+            z-index: 999; /* Ensure button is on top of other content */
+            background: none; /* Remove background color */
+            border: none; /* Remove border */
+        }
+
+        .gallery-button img {
+            width: 64px; /* Set width to 64 pixels */
+            height: 64px; /* Set height to 64 pixels */
+        }
+    </style>
+	
+	
+	<script>
+		function goToGallery() {
+            // Redirect to the gallery page
+            window.location.href = "index.html"; // Replace gallery.html with the actual URL of your gallery page
+        }
+	</script>
+	
+	
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+		<button class="gallery-button" onclick="goToGallery()">
+        <img src="https://cdn.discordapp.com/attachments/1127651827337396378/1243916520405598238/wR2XCUP.png?ex=66533709&is=6651e589&hm=d9e1a37f961a09a8088430310272156c2a2e9de323a7dc1c4d075557c5964375&" alt="Gallery Icon">
+    </button>
+    </header>
+
+    <main>
+        <section>
+            <h2>Test</h2>
+            <img src="path_to_your_image.jpg" alt="Description of the image">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Deathshot. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
