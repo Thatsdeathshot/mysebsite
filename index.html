@@ -42,7 +42,7 @@
             text-decoration: underline; /* Underline on hover */
         }
         #slideshowImage {
-            transition: opacity 1s ease; /* Add transition effect to the image */
+            transition: opacity 0.5s ease; /* Add transition effect to the image */
         }
 
         
@@ -62,7 +62,7 @@
             setInterval(() => {
                 showSlide();
                 currentSlide = (currentSlide + 1) % slideshowImages.length;
-            }, 3000); // Change slide every 3 seconds (3000 milliseconds)
+            }, 4000); // Change slide every 3 seconds (3000 milliseconds)
         }
 
         function showSlide() {
