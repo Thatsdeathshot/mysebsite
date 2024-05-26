@@ -63,19 +63,29 @@
     
     <script>
         const slideshowImages = [
-            "https://cdn.discordapp.com/attachments/1127651827337396378/1243871349034713178/US8Wbuu.png?ex=66530cf7&is=6651bb77&hm=38710067f40f2c132608d0c8f5ae84bd0c51e5738505e00ff367370acdcb5e3b&",
-            "https://cdn.discordapp.com/attachments/1127651827337396378/1243890878611849256/ijU8t8V.png?ex=66531f27&is=6651cda7&hm=e66972fc339279c714c87ea62598852428ea634e5f5230a6b37e316d9433b12e&",
-            "https://cdn.discordapp.com/attachments/1127651827337396378/1243948212168167454/nTMj51P.png?ex=6653548d&is=6652030d&hm=b6c5d719af2e439ef311766b63ec59f6c026a4d078ce78a11f3105565f2ee22c&"
-            // Add more image URLs as needed
-        ];
+        "https://cdn.discordapp.com/attachments/1127651827337396378/1243871349034713178/US8Wbuu.png?ex=66530cf7&is=6651bb77&hm=38710067f40f2c132608d0c8f5ae84bd0c51e5738505e00ff367370acdcb5e3b&",
+        "https://cdn.discordapp.com/attachments/1127651827337396378/1243890878611849256/ijU8t8V.png?ex=66531f27&is=6651cda7&hm=e66972fc339279c714c87ea62598852428ea634e5f5230a6b37e316d9433b12e&",
+        "https://cdn.discordapp.com/attachments/1127651827337396378/1243948212168167454/nTMj51P.png?ex=6653548d&is=6652030d&hm=b6c5d719af2e439ef311766b63ec59f6c026a4d078ce78a11f3105565f2ee22c&"
+        // Add more image URLs as needed
+    ];
 
         let currentSlide = 0;
+    
+        function preloadImages() {
+            slideshowImages.forEach((image) => {
+                new Image().src = image;
+            });
+        }
 
         function startSlideshow() {
-            setInterval(() => {
-                showSlide();
-                currentSlide = (currentSlide + 1) % slideshowImages.length;
-            }, 4000); // Change slide every 3 seconds (3000 milliseconds)
+            preloadImages();
+            requestAnimationFrame(slide);
+        }
+
+        function slide() {
+            showSlide();
+            currentSlide = (currentSlide + 1) % slideshowImages.length;
+            requestAnimationFrame(slide);
         }
 
         function showSlide() {
@@ -89,6 +99,7 @@
 
         // Start the slideshow when the page loads
         window.onload = startSlideshow;
+
 
         function goToGallery() {
             // Redirect to the gallery page
