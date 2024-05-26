@@ -69,39 +69,27 @@
             "https://cdn.discordapp.com/attachments/1127651827337396378/1243948212168167454/nTMj51P.png?ex=6653548d&is=6652030d&hm=b6c5d719af2e439ef311766b63ec59f6c026a4d078ce78a11f3105565f2ee22c&"
             // Add more image URLs as needed
         ];
-        
-            let currentSlide = 0;
-            let image = document.getElementById('slideshowImage');
-            
-            function preloadImages() {
-                slideshowImages.forEach((image) => {
-                    new Image().src = image;
-                });
-            }
-            
-            function startSlideshow() {
-                preloadImages();
-                requestAnimationFrame(slide);
-            }
-            
-            function slide() {
+
+        let currentSlide = 0;
+
+        function startSlideshow() {
+            setInterval(() => {
                 showSlide();
                 currentSlide = (currentSlide + 1) % slideshowImages.length;
-                setTimeout(() => {
-                    requestAnimationFrame(slide);
-                }, 3000); // Change slide every 3 seconds (3000 milliseconds)
-            }
-            
-            function showSlide() {
-                image.style.opacity = 0; // Fade out the image
-                setTimeout(() => {
-                    image.src = slideshowImages[currentSlide];
-                    image.style.opacity = 1; // Fade in the new image
-                }, 500); // Delay before showing the new image (0.5 seconds)
-            }
-            
-            // Start the slideshow when the page loads
-            window.onload = startSlideshow;
+            }, 4000); // Change slide every 3 seconds (3000 milliseconds)
+        }
+
+        function showSlide() {
+            const image = document.getElementById('slideshowImage');
+            image.style.opacity = 0; // Fade out the image
+            setTimeout(() => {
+                image.src = slideshowImages[currentSlide];
+                image.style.opacity = 1; // Fade in the new image
+            }, 500); // Delay before showing the new image (0.5 seconds)
+        }
+
+        // Start the slideshow when the page loads
+        window.onload = startSlideshow;
 
 
 
